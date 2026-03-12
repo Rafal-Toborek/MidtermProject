@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script> <!-- linking js file -->
+    <link rel="stylesheet" href="styles.css"> <!-- linking html file -->
 </head>
 <body>
-    <h1 id="title"> Wild West Haunting </h1>
-    <div class="imageDiv">
+    <h1 id="title"> Wild West Haunting </h1> <!-- title at top -->
+    <div class="imageDiv"> <!-- image display and tooltip logic on html side -->
         <img src="./images/Call2Action.png" alt="scene" id="scene">
-        <div class="tooltip">4202</div>
+        <div class="tooltip">4202</div> <!-- tooltip and what it should display -->
     </div>
-    <p id="text"></p>
-    <p id="endText"> the end </p>
+    <p id="text"></p> <!-- text used to tell story -->
+    <p id="endText"> the end </p> <!-- text to display at the end and below that is the special text saying that you need a passcode for one of the parts to move along -->
     <p id="padCodeText">Looks Like you need a passcode, Try to see if there is anything that could be a passcode in the previous rooms.</p>
-    <p id="thanksText"> Thanks for playing </p>
+    <p id="thanksText"> Thanks for playing </p> <!-- text that is revealed at the end with a button thanking the player for playing -->
     <button id="next">Next</button>
     <button id="prev">Previous</button>
     <button id="toOutside" class="hidden">To Outside</button>
