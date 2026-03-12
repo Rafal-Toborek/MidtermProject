@@ -1,0 +1,16 @@
+.imageDiv{position:relative;display:inline-block}
+.imageDiv .tooltip{display:none;position:absolute;top:6px;left:6px;background:rgba(0,0,0,0.8);color:#fff;padding:6px 8px;border-radius:4px;font-size:14px;pointer-events:none}
+.imageDiv.show-tooltip:hover .tooltip{display:block}
+
+.tooltip {
+	display: none;
+	position: absolute;
+	background: rgba(0,0,0,0.75);
+	color: #fff;
+	padding: 6px 8px;
+	border-radius: 4px;
+	font-size: 14px;
+	pointer-events: none;
+	z-index: 1000;
+}
+
