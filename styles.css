@@ -5,12 +5,83 @@
 .tooltip {
 	display: none;
 	position: absolute;
-	background: rgba(0,0,0,0.75);
-	color: #fff;
-	padding: 6px 8px;
+	background: linear-gradient(180deg, #fbf0d9, #f3e2b8);
+	color: var(--text-brown, #3b2a1a);
+	padding: 8px 10px;
 	border-radius: 4px;
+	border: 1px solid rgba(0,0,0,0.15);
 	font-size: 14px;
 	pointer-events: none;
 	z-index: 1000;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+	font-family: Georgia, 'Times New Roman', serif;
 }
+
+/* Center entire page content */
+html, body {
+	height: 100%;
+	margin: 0;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	min-height: 100vh;
+	gap: 1rem;
+	box-sizing: border-box;
+}
+
+/* Ensure inline-block image containers stay centered */
+/* Wild West theme variables and styles */
+:root {
+	--wood-1: #b07a4b;
+	--wood-2: #613616;
+	--leather: #6b3e1a;
+	--accent-gold: #c59d5f;
+	--parchment: #f6e8c8;
+	--text-brown: #3b2a1a;
+	--rust: #b04a2a;
+}
+
+body {
+	background-color: var(--wood-1);
+	background-image:
+		linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)),
+		repeating-linear-gradient(90deg, rgba(0,0,0,0.02) 0 2px, transparent 2px 120px);
+	color: var(--text-brown);
+	font-family: Georgia, 'Times New Roman', serif;
+}
+
+h1, h2, h3 {
+	color: var(--parchment);
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+	letter-spacing: 1px;
+	margin: .5rem 0;
+}
+
+h1 { font-size: 2.25rem; border-bottom: 4px double rgba(0,0,0,0.12); padding-bottom: .5rem; }
+
+a { color: var(--accent-gold); text-decoration: none; border-bottom: 1px dotted rgba(0,0,0,0.15); }
+a:hover { color: #8b5a2b; text-decoration: underline; }
+
+button, .btn { background: linear-gradient(180deg, var(--leather), #5a3013); color: var(--parchment); border: 2px solid rgba(0,0,0,0.3); padding: .6rem 1rem; border-radius: 6px; box-shadow: 0 3px 0 rgba(0,0,0,0.25); cursor: pointer; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+
+.card { background: linear-gradient(180deg, rgba(246,232,200,0.95), rgba(230,210,170,0.9)); border: 2px solid rgba(0,0,0,0.15); padding: 1rem; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.35); max-width: 80ch; }
+
+/* Paragraphs: larger and western display font */
+p {
+	font-family: 'Rye', 'Cinzel Decorative', Georgia, 'Times New Roman', serif;
+	font-size: 1.15rem;
+	line-height: 1.7;
+	color: var(--text-brown);
+	margin: 0 0 1rem 0;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.02), 0 2px 0 rgba(0,0,0,0.06);
+}
+
+.imageDiv { box-shadow: 0 6px 0 rgba(0,0,0,0.25), inset 0 2px 0 rgba(255,255,255,0.03); border: 6px solid #5b3a2a; border-radius: 6px; background: linear-gradient(180deg,#4f2f1b,#6b3e1a); padding: 6px; }
+
+/* Minor tooltip tweak to match parchment */
+.tooltip { background: linear-gradient(180deg, #fbf0d9, #f3e2b8); }
 

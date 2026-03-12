@@ -1,5 +1,6 @@
 try{
 // references all elements from the html
+let title = document.getElementById("title");
 let scene = document.getElementById("scene");
 let text = document.getElementById("text");
 let nextButton = document.getElementById("next");
@@ -24,7 +25,35 @@ let thanks = document.getElementById("thanks")
 let thanksText = document.getElementById("thanksText")
 // 2 arrays that house all of the scene images and the text assorted with them
 images = ["./images/Call2Action.png","./images/Outside.png","./images/Around.png","./images/Porch.png" ,"./images/Living.png", "./images/LHallway.png","./images/Kitchen.png","./images/Creepy People.png","./images/Insanity Ending.png","./images/RHallway.png", "./images/Attic.png", "./images/Figure.png", "./images/Mystery Ending.png", "./images/Secret Room.png", "./images/Long Hallway.png", "Time Travel End.png"];
-sceneText = ["Call to Action", "Outside", "Around", "Porch", "Living Room", "Left Hallway", "kitchen", "Creepy People", "Insanity Ending", "Right Hallway"];
+sceneText = ["It is 1850 in Eastern Texas. You are a private investigator working with the Sheriff to investigate a series of recent disappearances and you have recently caught a new lead. A house where some people have been spotted entering and not leaving. The house has been abandoned, figures could have been seen moving about inside and lights coming from its windows however no one is ever found there.", 
+    "You finally ride out to the house, it's far out in the bush and look over the house. It's definitely abandoned but still seems structurally sound. ", 
+    "You take a look around the outside of the house. You find some rubble and decide to see what's in it (press up arrow). ",
+    "You go directly on the porch. The door is slightly opened. You take a look around.",
+    "An old Livingroom with nothing of interest inside of it however there are two hallways you can take.",
+    "The hallway leads to the kitchen however a strange smell of sweat is arising from the end of the hallway.",
+    "The smell is now really heavy coming from behind the door on the other side of the kitchen.", 
+    "Entering through the door you find a group of people standing still facing away from you. You call out to them but they dont respond. You can see something is off and you aren't about to find out what. ",
+    "As you run back through the house you hear shuffling behind you. You hop back on your horse and ride away however you soon start to feel dizzy. You slump over and fall off your horse, waking up a field. The search for the missing people would continue in the coming month. You try to tell what you saw in the house but when people enter to investigate they say there is no door after the kitchen and write you off as crazy. ", 
+    "The hallway leads to the attic however you also see a locked door.",
+    "You begin to move into the attic.",
+    "You enter the attic and see a black figure in the corner.",
+    "Before you are able to turn around and run you fall unconscious. Waking up you find yourself back in your office with no idea how you got there. You never got to find out what you saw that day however nothing ever felt the same after. Everyone you meet seemed to look a little different and your office seems to have been altered ever so slightly as well.",
+    "You enter the secret room and find another door with a padlock with a 4 digit code on it. Try to look around the previous rooms to see if you can see what it is.", 
+    "Making it through the door you find a long hallway to find another door.",
+    "You find that the tunnel led you back out the front door even though it was completely straight. Making it out the front door you find the desert looking different. It's harder to breathe and the air is warmer. You look behind you but find the house that you just exited is gone. All of a sudden you see a dinosaur come up from behind a rock. The tunnel had brought you millions of years back in time."];
+
+// colors for loop in title
+colors = ["Brown", "gray", "tan"]
+
+// rotating through colors based on colors array in the title <h1>
+function rotateTitleColors() {
+    let i = 0;
+    setInterval(function() {
+        if (title) title.style.color = colors[i % colors.length]; 
+        i++;}, 500
+    );
+}
+rotateTitleColors();
 
 // "key" to progress and the code variable for progressing through the story
 let hasKey = false
@@ -38,8 +67,8 @@ text.textContent = sceneText[0];
 function updateScene() { // The function checks what scene you are on in order to present you with the correct scene and buttons/options to go along with it
     scene.src = images[currentScene];
     text.textContent = sceneText[currentScene]; // Present correct image and text assorted with the image
- 
-    if (currentScene === 0) { //standard button layout
+    console.log(currentScene)
+    if (currentScene === 0) { // standard button layout
         toOutside.style.display = "none"; 
         toPorch.style.display = "none";
         toLHallway.style.display = "none";
@@ -274,12 +303,12 @@ function updateScene() { // The function checks what scene you are on in order t
 }
  
 // Event listeners just update currentScene and call the function
-nextButton.addEventListener("click", function() { // standard progress scene
+nextButton.addEventListener("click", function() { // standard button progress scene
     currentScene++;
     updateScene();
 });
  
-prevButton.addEventListener("click", function() { // standard one scene back
+prevButton.addEventListener("click", function() { // standard button one scene back
     if (currentScene > 0) {
         currentScene--;
         updateScene();
@@ -359,6 +388,9 @@ addEventListener("load", function(){ // listener that displays an introductory m
 })
 
 updateScene() // calls function to advance scene
+
+
+
 } catch { // catches any errors
     console.log("There was an error")
 }
